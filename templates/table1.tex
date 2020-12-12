@@ -1,0 +1,17 @@
+\documentclass{article}
+\begin{document}
+\section{Example}\label{sec:example}
+
+\BLOCK{set colsep = joiner("&")}
+\begin{center}
+  \begin{tabular}{\VAR{header_pattern}}
+    \hline
+    \BLOCK{for col in header} \VAR{colsep()} \textbf{\VAR{col}} \BLOCK{endfor}  \\
+    \hline
+    \BLOCK{for row in data} \BLOCK{for col in row} \BLOCK{ if not loop.first } \VAR{colsep()} \BLOCK{endif} \VAR{col} \BLOCK{endfor} \\
+    \hline
+    \BLOCK{endfor}
+  \end{tabular}
+\end{center}
+
+\end{document}
